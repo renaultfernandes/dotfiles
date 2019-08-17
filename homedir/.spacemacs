@@ -62,6 +62,7 @@ This function should only modify configuration layer settings."
      (go :variables
          go-tab-width 4)
      lsp
+     dap
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-backend 'lsp-cquery)
