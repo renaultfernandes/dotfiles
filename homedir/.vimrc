@@ -51,7 +51,7 @@ inoremap fd <ESC>
 
 " Set solarized theme
 colorscheme solarized
-set background=light
+set background=dark
 
 " ==========================================================================
 "  Setup Spacemacs like bindings
