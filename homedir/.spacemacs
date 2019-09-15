@@ -57,7 +57,8 @@ This function should only modify configuration layer settings."
      restclient
 
      python
-     rust
+     (rust :variables
+           rust-backend 'lsp)
      gpu
      (go :variables
          go-tab-width 4)
