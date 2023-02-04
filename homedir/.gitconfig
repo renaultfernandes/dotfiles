@@ -1,0 +1,12 @@
+[include]
+    path = ~/.gitconfig-personal
+
+[color]
+    ui = auto
+
+[alias]
+    s = status
+    d = diff
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
