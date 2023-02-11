@@ -1,12 +1,24 @@
 [include]
     path = ~/.gitconfig-personal
 
+[core]
+    editor = vim
+
 [color]
     ui = auto
 
 [alias]
     s = status
+    ss = status --short --branch
     d = diff
+    stl = stash list
+    l = log --oneline -n 5
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
+
+[filter "lfs"]
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
