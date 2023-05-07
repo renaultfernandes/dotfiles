@@ -76,6 +76,8 @@ This function should only modify configuration layer settings."
      typescript
      (vue :variables vue-backend 'dumb)
      elm
+
+     yaml
      )
 
 
@@ -523,6 +525,17 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
+  (define-minor-mode org-notes-mode
+    "Auto wrapping and indenting while writing notes in org mode."
+    :lighter "Org-notes"
+    (progn
+      (setq
+       fill-column 100
+       word-wrap t)
+      (org-indent-mode)
+      (toggle-truncate-lines t)
+      (visual-fill-column-mode)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
